@@ -6,6 +6,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Navigation } from "swiper/modules";
 
 import {
+  ArrowLeft,
   ChevronLeft,
   ChevronRight,
   Sparkles,
@@ -208,7 +209,7 @@ function ProductSwiper({ title, products }) {
   );
 }
 
-export default function MetallicGraniteSeries() {
+export default function MetallicGraniteSeries({ backHref = "/products" }) {
   const categories = Object.entries(metallicGraniteProducts);
 
   return (
@@ -225,6 +226,17 @@ export default function MetallicGraniteSeries() {
 
       {/* MAIN CONTAINER */}
       <div className="relative w-full px-4 sm:px-6 lg:px-8">
+        {/* BACK LINK */}
+        <Link
+          href={backHref}
+          className="group mb-8 inline-flex items-center gap-2 text-sm font-semibold text-[#258F94] transition-colors hover:text-[#207c80]"
+        >
+          <span className="flex h-8 w-8 items-center justify-center rounded-full border border-[#258F94]/20 bg-white shadow-sm transition-all duration-300 group-hover:-translate-x-1 group-hover:border-[#258F94]/50">
+            <ArrowLeft className="h-4 w-4" />
+          </span>
+          Back to Products
+        </Link>
+
         {/* SECTION HEADER */}
         <div className="mx-auto mb-12 max-w-3xl text-center sm:mb-14 md:mb-16">
           {/* BADGE */}
@@ -243,18 +255,18 @@ export default function MetallicGraniteSeries() {
 
           {/* MAIN TITLE */}
           <h2 className="text-2xl font-semibold tracking-tight text-gray-900 sm:text-3xl md:text-4xl ">
-            Metallic &{" "}
+            Quartz{" "}
             <span className="relative inline-block text-[#30ADB2]">
-              Granite Series
+              Sink
               <span className="absolute -bottom-2 left-1/2 h-[3px] w-14 -translate-x-1/2 rounded-full bg-gradient-to-r from-transparent via-[#30ADB2] to-transparent sm:-bottom-3 sm:w-20" />
             </span>
           </h2>
 
           {/* DESCRIPTION */}
           <p className="mx-auto mt-6 max-w-2xl text-sm leading-7 text-gray-500 sm:text-base sm:leading-8">
-            Discover our premium metallic and granite sinks, available in
-            multiple sizes, bowl configurations and elegant finishes crafted for
-            modern kitchens.
+            Discover our premium quartz sinks, available in multiple sizes,
+            bowl configurations and elegant finishes crafted for modern
+            kitchens.
           </p>
 
           {/* DECORATIVE DIVIDER */}

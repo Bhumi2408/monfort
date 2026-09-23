@@ -7,16 +7,18 @@ import { FaFacebookF, FaInstagram, FaWhatsapp } from "react-icons/fa";
 export default function Footer() {
   const quickLinks = [
     { name: "Home", href: "/" },
-    { name: "About Us", href: "#about" },
+    { name: "About Us", href: "/about" },
     { name: "Testimonials", href: "/testimonial" },
     { name: "Contact Us", href: "/contact" },
   ];
 
   const products = [
-    "INDIAN SINK",
-    "HANDMADE SINK",
-    "PTMT TAPS",
-    "WATERFALL SINKS",
+    { name: "Indian Sink", href: "/products/indian-sink" },
+    { name: "Handmade Sink", href: "/products/handmade" },
+    { name: "Waterfall Sinks", href: "/products/waterfall" },
+    { name: "Premium Handmade Kitchen Sink", href: "/products/premium-handmade" },
+    { name: "Quartz Sink", href: "/products/quartz-sink" },
+    { name: "PTMT Taps", href: "/products/ptmt-taps" },
   ];
 
   return (
@@ -108,17 +110,18 @@ export default function Footer() {
             </h3>
             <div className="space-y-3">
               {products.map((item) => (
-                <div
-                  key={item}
-                  className="flex items-center gap-3 border-b border-gray-800 pb-5 text-sm md:text-base"
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  className="flex items-center gap-3 border-b border-gray-800 pb-5 text-sm md:text-base hover:text-[#34acb1] transition"
                 >
                   <Circle
                     size={7}
                     className="text-[#34acb1]"
                     fill="currentColor"
                   />
-                  {item}
-                </div>
+                  {item.name}
+                </Link>
               ))}
             </div>
           </div>

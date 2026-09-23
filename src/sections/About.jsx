@@ -63,7 +63,7 @@ export default function AboutSection() {
   return (
     <section
       id="about"
-      className="relative overflow-hidden bg-[#F8FAFA] py-16 scroll-mt-24 sm:py-20 lg:py-28"
+      className="relative overflow-hidden bg-[#F8FAFA] pb-16 pt-8 scroll-mt-24 sm:pb-20 sm:pt-10 lg:pb-28 lg:pt-14"
     >
       {/* Background Decorations */}
       <div className="pointer-events-none absolute left-[-180px] top-[8%] h-[420px] w-[420px] rounded-full bg-[#34ACB1]/10 blur-[110px]" />
@@ -80,7 +80,7 @@ export default function AboutSection() {
               {/* Main Image Card */}
               <div className="relative aspect-[4/5] w-full overflow-hidden rounded-[28px] bg-[#0B1112] shadow-[0_30px_80px_rgba(11,17,18,0.2)] sm:aspect-[5/6]">
                 <Image
-                  src="/about/aboutimage.png"
+                  src="/about/aboutimage.webp"
                   alt="Monfort Kitchen Sink"
                   fill
                   priority

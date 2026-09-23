@@ -71,7 +71,7 @@ export default function Contact() {
   };
 
   return (
-    <main className="overflow-hidden bg-white">
+    <div className="overflow-hidden bg-white">
       <section
         id="contact"
         className="relative scroll-mt-24 overflow-hidden bg-[#F7FAF9] py-16 sm:py-20 lg:py-24"
@@ -514,7 +514,7 @@ export default function Contact() {
           <Reveal className="mt-8 lg:mt-10">
             <div className="grid gap-4 sm:grid-cols-3">
               <Link
-                href="#products"
+                href="/#products"
                 className="group flex items-center gap-4 rounded-2xl border border-[#E1EBE8] bg-white p-5 shadow-[0_8px_30px_rgba(15,40,35,0.04)] transition-all duration-300 hover:-translate-y-1 hover:border-[#34acb1]/30 hover:shadow-[0_15px_35px_rgba(15,40,35,0.08)]"
               >
                 <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-[#EAF7F6] text-[#258F94] transition-all group-hover:bg-[#34acb1] group-hover:text-white">
@@ -538,7 +538,7 @@ export default function Contact() {
               </Link>
 
               <Link
-                href="#faq"
+                href="/#faq"
                 className="group flex items-center gap-4 rounded-2xl border border-[#E1EBE8] bg-white p-5 shadow-[0_8px_30px_rgba(15,40,35,0.04)] transition-all duration-300 hover:-translate-y-1 hover:border-[#34acb1]/30 hover:shadow-[0_15px_35px_rgba(15,40,35,0.08)]"
               >
                 <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-[#EAF7F6] text-[#258F94] transition-all group-hover:bg-[#34acb1] group-hover:text-white">
@@ -602,7 +602,7 @@ export default function Contact() {
 
         <div className="h-px flex-1 bg-[#E3EAE7]" />
       </div>
-    </main>
+    </div>
   );
 }
 
