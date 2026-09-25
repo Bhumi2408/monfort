@@ -20,19 +20,19 @@ const caveat = Caveat({
 
 const products = [
   {
-    img: "/about/singlBowl.jpg",
-    title: "Single Bowl",
-    subtitle: "Minimal & Modern",
+    img: "/about/shower.webp",
+    title: "SHOWER SYSTEM",
+    subtitle: "Modern Comfort, Everyday Luxury",
   },
   {
-    img: "/about/doubleBowl.jpg",
-    title: "Double Bowl",
-    subtitle: "More Space, More Ease",
+    img: "/about/rack.webp",
+    title: "BATHROOM RACK",
+    subtitle: "Smart Storage, Easy Access",
   },
   {
-    img: "/about/designer.jpg",
-    title: "Designer",
-    subtitle: "Innovative & Stylish",
+    img: "/about/square-jaali.webp",
+    title: "DRAINER",
+    subtitle: "Efficient Drainage, Clean Finish",
   },
 ];
 

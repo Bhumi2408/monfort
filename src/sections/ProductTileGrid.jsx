@@ -2,11 +2,13 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowUpRight, Droplets } from "lucide-react";
 
 import { StaggerGroup, StaggerItem } from "@/components/motion/Reveal";
 
-export default function ProductTileGrid({ tiles }) {
+// cover: image fills the whole box (main categories).
+// Default: whole product visible (contain) with padding.
+export default function ProductTileGrid({ tiles, cover = false }) {
   return (
     <StaggerGroup className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 lg:gap-7">
       {tiles.map((tile) => (
@@ -17,23 +19,41 @@ export default function ProductTileGrid({ tiles }) {
               {/* ================= IMAGE SECTION ================= */}
               <div className="relative h-[285px] shrink-0 overflow-hidden bg-gradient-to-br from-[#183241] via-[#1f4256] to-[#0f2431] sm:h-[300px]">
                 {/* colored halo behind the product — keeps light/steel items visible */}
-                <div className="pointer-events-none absolute left-1/2 top-1/2 h-40 w-40 -translate-x-1/2 -translate-y-1/2 rounded-full bg-white/[0.14] blur-2xl transition-all duration-700 group-hover:h-52 group-hover:w-52 group-hover:bg-white/[0.2]" />
+                <div className={`${cover ? "hidden" : ""} pointer-events-none absolute left-1/2 top-1/2 h-40 w-40 -translate-x-1/2 -translate-y-1/2 rounded-full bg-white/[0.14] blur-2xl transition-all duration-700 group-hover:h-52 group-hover:w-52 group-hover:bg-white/[0.2]`} />
 
                 {/* soft grounding shadow under the product */}
-                <div className="pointer-events-none absolute bottom-10 left-1/2 h-6 w-32 -translate-x-1/2 rounded-full bg-black/25 blur-md" />
+                {!cover && (
+                  <div className="pointer-events-none absolute bottom-10 left-1/2 h-6 w-32 -translate-x-1/2 rounded-full bg-black/25 blur-md" />
+                )}
 
                 <span className="absolute -right-2 -top-7 z-0 select-none text-[150px] font-black leading-none tracking-[-0.08em] text-white/[0.05] transition-all duration-700 group-hover:scale-105 group-hover:text-white/[0.08]">
                   {tile.number}
                 </span>
 
-                <div className="absolute inset-0 z-10 flex items-center justify-center p-6">
-                  <Image
-                    src={tile.image}
-                    alt={tile.title}
-                    fill
-                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                    className="object-contain p-6 drop-shadow-[0_16px_18px_rgba(0,0,0,0.45)] transition-transform duration-700 ease-out group-hover:scale-[1.08]"
-                  />
+                <div className={`absolute inset-0 z-10 flex items-center justify-center ${cover ? "" : "p-6"}`}>
+                  {tile.image ? (
+                    <Image
+                      src={tile.image}
+                      alt={tile.title}
+                      fill
+                      sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                      className={`transition-transform duration-700 ease-out ${
+                        cover
+                          ? "object-cover group-hover:scale-105"
+                          : "object-contain p-4 drop-shadow-[0_16px_18px_rgba(0,0,0,0.45)] group-hover:scale-[1.08]"
+                      }`}
+                    />
+                  ) : (
+                    // No product photo — show an icon badge instead
+                    <div className="flex flex-col items-center gap-3 transition-transform duration-700 ease-out group-hover:scale-[1.08]">
+                      <span className="flex h-20 w-20 items-center justify-center rounded-3xl border border-white/15 bg-white/[0.08] text-[#67cdd0] backdrop-blur-sm">
+                        <Droplets size={36} strokeWidth={1.5} />
+                      </span>
+                      <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-white/60">
+                        Contact us to buy
+                      </span>
+                    </div>
+                  )}
                 </div>
 
                 <div className="absolute inset-x-0 bottom-0 z-20 h-20 bg-gradient-to-t from-[#0f2431]/50 to-transparent" />
@@ -50,7 +70,7 @@ export default function ProductTileGrid({ tiles }) {
               {/* -mt-px overlaps the image box by 1px to hide the hairline
                   seam Chrome/Safari render at rounded-corner + overflow-hidden
                   boundaries between two differently-colored sibling blocks */}
-              <div className="relative -mt-px flex flex-1 flex-col overflow-hidden bg-[#98d1d3] px-6 pb-6 pt-6 sm:px-7 sm:pb-7">
+              <div className="relative -mt-px flex flex-1 flex-col overflow-hidden bg-[#258f94] px-6 pb-6 pt-6 sm:px-7 sm:pb-7">
                 <div className="pointer-events-none absolute -right-16 -top-16 h-40 w-40 rounded-full bg-[#258F94]/20 blur-3xl transition-all duration-700 group-hover:scale-150" />
 
                 <span className="pointer-events-none absolute -bottom-8 -right-2 text-[110px] font-black leading-none text-white/[0.025]">
@@ -76,13 +96,13 @@ export default function ProductTileGrid({ tiles }) {
                     <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-white">
                       Explore Product
                     </span>
-                    <span className="text-xs font-medium text-[#34ACB1]">
+                    <span className="text-xs font-medium text-white">
                       View Details
                     </span>
                   </div>
                 </div>
 
-                <div className="absolute bottom-0 left-0 h-[3px] w-0 bg-[#258F94] transition-all duration-500 group-hover:w-full" />
+                <div className="absolute bottom-0 left-0 h-[3px] w-0 bg-white transition-all duration-500 group-hover:w-full" />
               </div>
             </div>
           </Link>

@@ -100,7 +100,7 @@ export default function WhyChooseUs() {
             <div className="relative w-full max-w-[620px] overflow-hidden rounded-[2rem] border border-[#258F94]/10 bg-[#258F94]/5 p-3 shadow-xl shadow-[#258F94]/10 sm:p-5">
               <div className="overflow-hidden rounded-[1.5rem] bg-white">
                 <Image
-                  src="/why_choose.jpg"
+                  src="/why-choose.webp"
                   alt="Why Choose Monfort Kitchens"
                   width={620}
                   height={620}

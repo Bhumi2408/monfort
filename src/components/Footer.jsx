@@ -8,7 +8,7 @@ export default function Footer() {
   const quickLinks = [
     { name: "Home", href: "/" },
     { name: "About Us", href: "/about" },
-    { name: "Testimonials", href: "/testimonial" },
+    { name: "Testimonials", href: "/#testimonial" },
     { name: "Contact Us", href: "/contact" },
   ];
 
@@ -74,7 +74,7 @@ export default function Footer() {
                   <MapPin className="text-[#34acb1] w-[120]" size={24} />
                 </div>
                 <p className="text-sm md:text-base leading-7 max-w-xs">
-                  G-108, sector -3, Bawana industrial area, Delhi-11039 (INDIA)
+                  G-108, sector -3, Bawana industrial area, Delhi-110039 (INDIA)
                 </p>
               </div>
             </div>

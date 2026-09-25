@@ -111,22 +111,23 @@ export default function CategoryPage({
           </div>
 
           {/* Stats — divided row, not boxes */}
-          <div className="mx-auto mt-10 flex w-fit items-center gap-6 rounded-2xl border border-white/10 bg-white/[0.04] px-6 py-5 backdrop-blur-sm sm:gap-10 sm:px-10">
-            {stats.map((stat, i) => (
-              <div key={stat.label} className="flex items-center gap-6 sm:gap-10">
-                {i > 0 && <div className="h-10 w-px bg-white/10" />}
-                <div className="flex items-center gap-3">
-                  <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-white/[0.06] text-[#67cdd0]">
-                    <stat.icon className="h-[18px] w-[18px]" />
-                  </span>
-                  <div>
-                    <p className="text-xl font-bold text-white sm:text-2xl">
-                      {stat.value}
-                    </p>
-                    <p className="text-[11px] font-medium uppercase tracking-wider text-white/45">
-                      {stat.label}
-                    </p>
-                  </div>
+          {/* Mobile: equal columns, icon stacked above text. sm+: inline row */}
+          <div className="mx-auto mt-10 flex w-full max-w-md divide-x divide-white/10 rounded-2xl border border-white/10 bg-white/[0.04] py-4 backdrop-blur-sm sm:w-fit sm:max-w-none sm:px-2 sm:py-5">
+            {stats.map((stat) => (
+              <div
+                key={stat.label}
+                className="flex min-w-0 flex-1 flex-col items-center gap-2 px-2 text-center sm:flex-none sm:flex-row sm:gap-3 sm:px-8 sm:text-left"
+              >
+                <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-white/[0.06] text-[#67cdd0]">
+                  <stat.icon className="h-[18px] w-[18px]" />
+                </span>
+                <div className="min-w-0">
+                  <p className="truncate text-lg font-bold leading-tight text-white sm:text-2xl">
+                    {stat.value}
+                  </p>
+                  <p className="mt-0.5 text-[10px] font-medium uppercase tracking-wider text-white/45 sm:text-[11px]">
+                    {stat.label}
+                  </p>
                 </div>
               </div>
             ))}

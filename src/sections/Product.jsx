@@ -12,7 +12,7 @@ const mainCategories = [
     title: "Kitchen Sinks",
     description:
       "Indian, handmade, waterfall, premium handmade and quartz sinks — crafted for every kind of kitchen.",
-    image: "/products/handmade-sink.webp",
+    image: "/products/kitchen.webp",
     href: "/products/kitchen-sinks",
   },
   {
@@ -20,15 +20,15 @@ const mainCategories = [
     title: "Bathroom Accessories",
     description:
       "Drainers, faucets, sprays, dispensers, showers, taps and more for a complete bathroom fit-out.",
-    image: "/products/pmtp.webp",
+    image: "/products/bathroom.webp",
     href: "/products/bathroom-accessories",
   },
   {
     number: "03",
     title: "Premium Montfort Accessories",
     description:
-      "Our upcoming Raykar Brass and premium accessory range — coming soon.",
-    image: "/products/metallicAndgranite.webp",
+      "Brayston and Technova series stainless steel accessories — towel rods, racks, soap dishes and more.",
+    image: "/products/premium.webp",
     href: "/products/premium-montfort-accessories",
   },
 ];
@@ -164,7 +164,7 @@ export default function Products({ standalone = false }) {
         {/* =====================================================
             MAIN CATEGORY GRID
         ====================================================== */}
-        <ProductTileGrid tiles={mainCategories} />
+        <ProductTileGrid tiles={mainCategories} cover />
       </div>
     </section>
   );

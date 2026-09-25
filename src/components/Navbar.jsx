@@ -50,7 +50,13 @@ const productMenu = [
     group: "Premium Montfort Accessories",
     href: "/products/premium-montfort-accessories",
     icon: Gem,
-    items: [],
+    items: [
+      { name: "Brayston Series", href: "/products/premium-montfort-accessories/brayston" },
+      { name: "Technova Series", href: "/products/premium-montfort-accessories/technova" },
+    ],
+    featured: {
+      tagline: "Stainless steel bathroom accessories",
+    },
   },
 ];
 
@@ -107,6 +113,23 @@ export default function Header() {
 
                 <span className="mt-0.5 text-[11px] font-medium text-gray-200 transition-colors group-hover:text-[#34acb1] sm:text-sm">
                   +91-8383972282
+                </span>
+              </a>
+
+              {/* Divider */}
+              <span className="mx-3 h-7 w-px bg-white/20 sm:mx-5" />
+
+              {/* Office Number */}
+              <a
+                href="tel:+918383972282"
+                className="group flex flex-col leading-tight"
+              >
+                <span className="text-[8px] font-semibold uppercase tracking-[1px] text-gray-500 sm:text-[9px]">
+                  Address
+                </span>
+
+                <span className="mt-0.5 text-[11px] font-medium text-gray-200 transition-colors group-hover:text-[#34acb1] sm:text-sm">
+                  Bawana, Delhi, 110039
                 </span>
               </a>
             </div>
@@ -175,25 +198,97 @@ export default function Header() {
                     </Link>
 
                     {/* Mega menu */}
-                    <div className="invisible absolute left-1/2 top-full z-50 w-[720px] max-w-[92vw] -translate-x-1/2 translate-y-1 pt-4 opacity-0 transition-all duration-300 group-hover:visible group-hover:translate-y-0 group-hover:opacity-100">
+                    <div className="invisible absolute left-1/2 top-full z-50 w-[900px] max-w-[94vw] -translate-x-1/2 translate-y-2 pt-4 opacity-0 transition-all duration-300 group-hover:visible group-hover:translate-y-0 group-hover:opacity-100">
                       <div className="overflow-hidden rounded-3xl border border-gray-100 bg-white shadow-[0_30px_70px_rgba(19,54,58,0.18)]">
-                        <div className="grid grid-cols-3 divide-x divide-gray-100">
-                          {productMenu.map((section) => (
-                            <div key={section.group} className="p-5">
-                              <Link
-                                href={section.href}
-                                className="group/head mb-4 flex items-center gap-2.5"
-                              >
-                                <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-[#258F94]/10 text-[#258F94] transition-colors duration-300 group-hover/head:bg-[#258F94] group-hover/head:text-white">
-                                  <section.icon size={16} strokeWidth={1.8} />
-                                </span>
-                                <span className="text-sm font-bold leading-tight text-[#142A3D] transition-colors group-hover/head:text-[#258F94]">
-                                  {section.group}
-                                </span>
-                              </Link>
+                        <div className="h-[3px] w-full bg-gradient-to-r from-[#258F94] via-[#67cdd0] to-[#258F94]" />
 
-                              {section.items.length > 0 ? (
-                                <div className="flex flex-col gap-0.5">
+                        <div className="grid grid-cols-[1fr_1.5fr_1.15fr] gap-2 p-3">
+                          {productMenu.map((section) =>
+                            section.featured ? (
+                              <div
+                                key={section.group}
+                                className="group/feat relative flex flex-col overflow-hidden rounded-2xl bg-gradient-to-br from-[#0f2431] via-[#142A3D] to-[#1d4a5c] p-5 text-white transition-shadow duration-300 hover:shadow-[0_16px_40px_rgba(15,36,49,0.35)]"
+                              >
+                                <div className="pointer-events-none absolute -right-10 -top-10 h-36 w-36 rounded-full bg-[#30ADB2]/30 blur-3xl transition-transform duration-700 group-hover/feat:scale-150" />
+                                <div className="pointer-events-none absolute inset-0 opacity-[0.06] [background-image:linear-gradient(#fff_1px,transparent_1px),linear-gradient(90deg,#fff_1px,transparent_1px)] [background-size:22px_22px]" />
+
+                                <div className="relative flex items-center justify-between">
+                                  <span className="flex h-10 w-10 items-center justify-center rounded-xl border border-white/15 bg-white/10 text-[#67cdd0] backdrop-blur-sm">
+                                    <section.icon size={18} strokeWidth={1.8} />
+                                  </span>
+                                  <span className="rounded-full bg-[#67cdd0]/15 px-2.5 py-1 text-[9px] font-bold uppercase tracking-[0.18em] text-[#67cdd0]">
+                                    New
+                                  </span>
+                                </div>
+
+                                <Link
+                                  href={section.href}
+                                  className="relative mt-4 text-base font-bold leading-snug transition-colors hover:text-[#67cdd0]"
+                                >
+                                  {section.group}
+                                </Link>
+                                <p className="relative mt-1 text-xs leading-5 text-white/60">
+                                  {section.featured.tagline}
+                                </p>
+
+                                <div className="relative mt-4 flex flex-col gap-1.5">
+                                  {section.items.map((cat) => (
+                                    <Link
+                                      key={cat.href}
+                                      href={cat.href}
+                                      className={`group/series flex items-center justify-between gap-2 rounded-lg border px-3 py-2 text-[12px] font-semibold transition-all duration-200 ${
+                                        pathName === cat.href
+                                          ? "border-[#67cdd0]/60 bg-[#67cdd0]/15 text-white"
+                                          : "border-white/10 bg-white/[0.06] text-white/85 hover:border-[#67cdd0]/40 hover:bg-white/[0.12] hover:text-white"
+                                      }`}
+                                    >
+                                      <span className="flex items-center gap-2">
+                                        <span className="h-1.5 w-1.5 rounded-full bg-[#67cdd0]" />
+                                        {cat.name}
+                                      </span>
+                                      <ChevronRight
+                                        size={12}
+                                        className="shrink-0 text-[#67cdd0] transition-transform duration-200 group-hover/series:translate-x-0.5"
+                                      />
+                                    </Link>
+                                  ))}
+                                </div>
+
+                                <Link
+                                  href={section.href}
+                                  className="group/cta relative mt-auto flex items-center gap-1.5 pt-5 text-xs font-bold text-[#67cdd0] hover:text-white"
+                                >
+                                  Explore Collection
+                                  <ArrowUpRight
+                                    size={14}
+                                    className="transition-transform duration-300 group-hover/cta:translate-x-0.5 group-hover/cta:-translate-y-0.5"
+                                  />
+                                </Link>
+                              </div>
+                            ) : (
+                              <div key={section.group} className="rounded-2xl p-3">
+                                <Link
+                                  href={section.href}
+                                  className="group/head mb-3 flex items-center gap-2.5 border-b border-gray-100 pb-3"
+                                >
+                                  <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-[#258F94]/10 text-[#258F94] transition-colors duration-300 group-hover/head:bg-[#258F94] group-hover/head:text-white">
+                                    <section.icon size={16} strokeWidth={1.8} />
+                                  </span>
+                                  <span className="flex flex-col">
+                                    <span className="text-sm font-bold leading-tight text-[#142A3D] transition-colors group-hover/head:text-[#258F94]">
+                                      {section.group}
+                                    </span>
+                                    <span className="mt-0.5 text-[10px] font-semibold uppercase tracking-wider text-gray-400">
+                                      {section.items.length} categories
+                                    </span>
+                                  </span>
+                                </Link>
+
+                                <div
+                                  className={`grid gap-0.5 ${
+                                    section.items.length > 6 ? "grid-cols-2" : "grid-cols-1"
+                                  }`}
+                                >
                                   {section.items.map((cat) => (
                                     <Link
                                       key={cat.href}
@@ -207,18 +302,14 @@ export default function Header() {
                                       {cat.name}
                                       <ChevronRight
                                         size={12}
-                                        className="shrink-0 opacity-0 transition-opacity duration-200 group-hover/item:opacity-100"
+                                        className="shrink-0 -translate-x-1 opacity-0 transition-all duration-200 group-hover/item:translate-x-0 group-hover/item:opacity-100"
                                       />
                                     </Link>
                                   ))}
                                 </div>
-                              ) : (
-                                <p className="rounded-lg bg-gray-50 px-2.5 py-2 text-[13px] font-medium italic text-gray-400">
-                                  Coming Soon
-                                </p>
-                              )}
-                            </div>
-                          ))}
+                              </div>
+                            ),
+                          )}
                         </div>
 
                         <Link
@@ -376,9 +467,21 @@ export default function Header() {
                                   <Link
                                     href={section.href}
                                     onClick={() => setIsOpen(false)}
-                                    className="block rounded-lg px-3 py-2.5 text-sm font-medium italic text-gray-400"
+                                    className={`flex items-center justify-between gap-2 rounded-xl bg-gradient-to-br from-[#0f2431] to-[#1d4a5c] px-3 py-3 text-white ${
+                                      pathName === section.href ? "ring-2 ring-[#67cdd0]" : ""
+                                    }`}
                                   >
-                                    Coming Soon
+                                    <span className="flex flex-col">
+                                      <span className="text-sm font-semibold">
+                                        View Collection
+                                      </span>
+                                      {section.featured && (
+                                        <span className="mt-0.5 text-[11px] text-white/60">
+                                          {section.featured.tagline}
+                                        </span>
+                                      )}
+                                    </span>
+                                    <ArrowUpRight size={16} className="shrink-0 text-[#67cdd0]" />
                                   </Link>
                                 )}
                               </div>

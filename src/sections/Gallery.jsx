@@ -4,32 +4,82 @@ import Image from "next/image";
 import { Reveal } from "@/components/motion/Reveal";
 
 // Every real photo/product image used across the website.
+// `sink: true` photos are shown first on mobile and tablet.
 const photos = [
-  { img: "/hero/hero1.jpg", w: 3500, h: 2333, caption: "Premium Kitchen Sinks", type: "photo" },
-  { img: "/about/singlBowl.jpg", w: 550, h: 550, caption: "Single Bowl", type: "photo" },
-  { img: "/products/indian_sink.webp", w: 442, h: 247, caption: "Indian Kitchen Sink", type: "product" },
-  { img: "/metallicGraniteProducts/24_18/black.webp", w: 500, h: 500, caption: "24x18 — Black Finish", type: "product" },
-  { img: "/about/doubleBowl.jpg", w: 1024, h: 1024, caption: "Double Bowl", type: "photo" },
-  { img: "/products/handmade-sink.webp", w: 588, h: 424, caption: "Handmade Kitchen Sink", type: "product" },
-  { img: "/metallicGraniteProducts/37_18/Ivory Sand.webp", w: 612, h: 408, caption: "37x18 — Ivory Sand", type: "product" },
-  { img: "/about/designer.jpg", w: 800, h: 800, caption: "Designer Finish", type: "photo" },
-  { img: "/products/waterfall_sink.webp", w: 1536, h: 1024, caption: "Waterfall Sink", type: "product" },
-  { img: "/metallicGraniteProducts/24_18/gray_stone.webp", w: 512, h: 487, caption: "24x18 — Gray Stone", type: "product" },
-  { img: "/products/metallicAndgranite.webp", w: 612, h: 408, caption: "Quartz Sink", type: "product" },
-  { img: "/metallicGraniteProducts/37_18/Red Moon.webp", w: 612, h: 408, caption: "37x18 — Red Moon", type: "product" },
-  { img: "/why_choose.jpg", w: 1100, h: 732, caption: "Why Choose Monfort", type: "photo" },
-  { img: "/metallicGraniteProducts/24_18/Cera_Dotted_Finish.webp", w: 522, h: 478, caption: "24x18 — Cera Dotted", type: "product" },
-  { img: "/products/Grade_Handmade_Sinks.webp", w: 1536, h: 1024, caption: "Premium Handmade Kitchen Sink", type: "product" },
-  { img: "/metallicGraniteProducts/37_18/black.webp", w: 612, h: 408, caption: "37x18 — Black Finish", type: "product" },
-  { img: "/metallicGraniteProducts/24_18/Brown_Finish.webp", w: 547, h: 456, caption: "24x18 — Brown Finish", type: "product" },
-  { img: "/products/pmtp.webp", w: 1536, h: 1024, caption: "PTMT Taps", type: "product" },
-  { img: "/metallicGraniteProducts/37_18/Peach Ivory.webp", w: 612, h: 408, caption: "37x18 — Peach Ivory", type: "product" },
-  { img: "/metallicGraniteProducts/24_18/Red Moon Finish.webp", w: 500, h: 500, caption: "24x18 — Red Moon", type: "product" },
-  { img: "/metallicGraniteProducts/37_18/gray Finish.webp", w: 700, h: 356, caption: "37x18 — Gray Finish", type: "product" },
-  { img: "/metallicGraniteProducts/24_18/gray.webp", w: 512, h: 487, caption: "24x18 — Gray", type: "product" },
-  { img: "/metallicGraniteProducts/37_18/Cera Dotted.webp", w: 612, h: 408, caption: "37x18 — Cera Dotted", type: "product" },
-  { img: "/metallicGraniteProducts/24_18/Ivory Sand.webp", w: 518, h: 482, caption: "24x18 — Ivory Sand", type: "product" },
+  { img: "/about/designer.jpg", sink: true, w: 3500, h: 2333,  type: "photo" },
+  { img: "/gallery/tumbler.webp", w: 550, h: 550, type: "photo" },
+  { img: "/gallery/shower.webp", w: 442, h: 247,  type: "photo" },
+  { img: "/gallery/tap.webp", w: 500, h: 500, type: "photo" },
+  { img: "/gallery/corner.webp", w: 1024, h: 1024,  type: "photo" },
+  { img: "/hero/hero1.jpg", sink: true, w: 500, h: 420, type: "photo" },
+  { img: "/gallery/dispenser.webp", w: 612, h: 408, type: "photo" },
+  { img: "/gallery/faucet.webp", w: 800, h: 800, type: "photo" },
+  { img: "/gallery/hanger.webp", w: 1536, h: 1024, type: "photo" },
+
+  { img: "/gallery/rod.webp", w: 612, h: 408, type: "photo" },
+  { img: "/gallery/brass-tap.webp", w: 1100, h: 732, type: "photo" },
+  { img: "/gallery/rose-sink.webp", sink: true, w: 612, h: 428, type: "photo" },
+  { img: "/gallery/image1.webp", w: 522, h: 478, type: "photo" },
+  { img: "/gallery/liquid-dispenser.webp", w: 1536, h: 1024, type: "photo" },
+  
+  { img: "/gallery/sandwich-shower.webp", w: 547, h: 456, type: "photo" },
+  { img: "/gallery/waterfall-sink.webp", sink: true, w: 700, h: 356, type: "photo" },
+  { img: "/gallery/soap-tumbler.webp", w: 612, h: 408, type: "photo" },
+  { img: "/gallery/dolphin.webp", w: 500, h: 500, type: "photo" },
+  
+  { img: "/gallery/double-soap.webp", w: 512, h: 487, type: "photo" },
+  { img: "/gallery/brass-2.jpg", w: 612, h: 408, type: "photo" },
+
 ];
+
+// Mobile + tablet: sinks on top, then everything else, in an even square grid
+const mobilePhotos = [
+  ...photos.filter((p) => p.sink),
+  ...photos.filter((p) => !p.sink),
+];
+
+// square: fixed 1:1 tile (mobile/tablet grid). Otherwise natural height (masonry).
+function GalleryItem({ item, index, square = false }) {
+  return (
+    <Reveal
+      delay={(index % 8) * 0.05}
+      className={`relative overflow-hidden bg-white shadow-[0_8px_24px_rgba(11,17,18,0.06)] ${
+        square ? "rounded-xl sm:rounded-2xl" : "mb-4 break-inside-avoid rounded-2xl"
+      }`}
+    >
+      <div
+        className={`group relative w-full overflow-hidden ${square ? "aspect-square" : ""}`}
+      >
+        {square ? (
+          <Image
+            src={item.img}
+            alt={item.caption || "Monfort gallery"}
+            fill
+            sizes="(max-width: 640px) 50vw, 25vw"
+            className="object-cover transition-transform duration-700 group-hover:scale-110"
+          />
+        ) : (
+          <Image
+            src={item.img}
+            alt={item.caption || "Monfort gallery"}
+            width={item.w}
+            height={item.h}
+            sizes="25vw"
+            className="block h-auto w-full object-cover transition-transform duration-700 group-hover:scale-110"
+          />
+        )}
+
+        <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#050909]/80 via-transparent to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+
+        {item.caption && (
+          <p className="pointer-events-none absolute inset-x-0 bottom-0 translate-y-2 p-3 text-[11px] font-semibold leading-tight text-white opacity-0 transition-all duration-500 group-hover:translate-y-0 group-hover:opacity-100 sm:p-4 sm:text-sm">
+            {item.caption}
+          </p>
+        )}
+      </div>
+    </Reveal>
+  );
+}
 
 export default function Gallery() {
   return (
@@ -59,36 +109,17 @@ export default function Gallery() {
           </p>
         </Reveal>
 
-        <div className="mt-14 columns-2 gap-3 sm:mt-16 sm:columns-3 sm:gap-4 lg:columns-4">
+        {/* Mobile + tablet: sinks first, then the rest */}
+        <div className="mt-12 grid grid-cols-2 gap-3 sm:mt-16 sm:grid-cols-4 sm:gap-4 lg:hidden">
+          {mobilePhotos.map((item, index) => (
+            <GalleryItem key={item.img} item={item} index={index} square />
+          ))}
+        </div>
+
+        {/* Desktop: original masonry order */}
+        <div className="mt-16 hidden columns-4 gap-4 lg:block">
           {photos.map((item, index) => (
-            <Reveal
-              key={index}
-              delay={(index % 8) * 0.05}
-              className="relative mb-3 break-inside-avoid overflow-hidden rounded-xl bg-white shadow-[0_8px_24px_rgba(11,17,18,0.06)] sm:mb-4 sm:rounded-2xl"
-            >
-              <div
-                className={`group relative w-full overflow-hidden ${
-                  item.type === "product" ? "bg-[#EFF8F8] p-5 sm:p-6" : ""
-                }`}
-              >
-                <Image
-                  src={item.img}
-                  alt={item.caption}
-                  width={item.w}
-                  height={item.h}
-                  sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
-                  className={`block h-auto w-full transition-transform duration-700 group-hover:scale-110 ${
-                    item.type === "product" ? "object-contain" : "object-cover"
-                  }`}
-                />
-
-                <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#050909]/80 via-transparent to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
-
-                <p className="pointer-events-none absolute inset-x-0 bottom-0 translate-y-2 p-3 text-[11px] font-semibold leading-tight text-white opacity-0 transition-all duration-500 group-hover:translate-y-0 group-hover:opacity-100 sm:p-4 sm:text-sm">
-                  {item.caption}
-                </p>
-              </div>
-            </Reveal>
+            <GalleryItem key={item.img} item={item} index={index} />
           ))}
         </div>
       </div>

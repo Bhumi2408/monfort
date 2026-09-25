@@ -328,7 +328,7 @@ export const sinksCatalog = {
       size: "18x16",
       finish: "Matt",
       options: [],
-      image: "/products/grade304/18x16-backcoating.png",
+      image: "/products/grade304/18x16-backcoating.webp",
     },
 
     {
@@ -376,7 +376,7 @@ export const sinksCatalog = {
       size: "37x18",
       finish: "Matt",
       options: [],
-      image: "/products/grade304/37x18-backcoating.png",
+      image: "/products/grade304/37x18-backcoating.webp",
     },
 
     {
@@ -484,7 +484,7 @@ export const sinksCatalog = {
 
 
   ptmtTaps: [
-    { range: "Long body", size: ["15 mm", "17 mm", "20 mm"], image: "/products/ptmttaps/long-body.png", images: ptmtImages("long-body") },
+    { range: "Long body", size: ["15 mm", "17 mm", "20 mm"], image: "/products/ptmttaps/long-body.webp", images: ptmtImages("long-body") },
     { range: "Bib cock", size: ["15 mm", "17 mm", "20 mm"], image: "/products/ptmttaps/bib-cock.webp", images: ptmtImages("bib-cock") },
     { range: "Angel wall", size: ["15 mm", "17 mm", "20 mm"], image: "/products/ptmttaps/angel-wall.webp", images: ptmtImages("angel-wall") },
     { range: "Pillar cock", size: ["15 mm", "17 mm", "20 mm"], image: "/products/ptmttaps/pillar-cock.webp", images: ptmtImages("pillar-cock") },
@@ -637,50 +637,49 @@ export const bathroomAccessories = {
     title: "DRAINER / JAALI",
     description:
       "Premium drain covers, jaali grates, shower drains and tile inserts for modern bathrooms.",
-    image: "/products/bathroom/drainer-jaali/beading-jaali.webp",
+    image: "/products/bathroom/drainer-jaali/cockroach-trap.webp",
     items: [
       {
         name: "Beeding Jaali",
         sizeOptions: ['3"', '4"', '5"'],
-        image: "/products/bathroom/drainer-jaali/beeding-jaali.png",
+        image: "/products/bathroom/drainer-jaali/beeding-jaali.webp",
       },
       {
         name: "Slice Jaali",
         sizeOptions: ['3"', '4"', '5"'],
-        image: "/products/bathroom/drainer-jaali/slice-jaali.png",
+        image: "/products/bathroom/drainer-jaali/slice-jaali.webp",
       },
       {
-        name: "Lock Jaali",
-        sizeOptions: ['3"', '4"', '5"'],
-        image: "/products/bathroom/drainer-jaali/lock-jaali.png",
+        name: "Round Lock Jaali",
+        sizeOptions: ['5 Inch'],
+        image: "/products/bathroom/drainer-jaali/lock-jaali.webp",
       },
       {
         name: "Square Lock Jaali",
-        sizeOptions: ['3"', '4"', '5"'],
-        image: "/products/bathroom/drainer-jaali/square-lock-jaali.png",
+        sizeOptions: ['5x5'],
+        image: "/products/bathroom/drainer-jaali/square-lock-jaali.webp",
+      },
+      {
+        name: "cockroach trap",
+        sizeOptions: ['5"'],
+        image: "/products/bathroom/drainer-jaali/cockroach-trap.webp",
       },
       {
         name: "Vertical Jaali",
-        sizeOptions: ['3"', '4"', '5"', '6"', '8"', '10"', '12"' ],
-        image: "/products/bathroom/drainer-jaali/vertical-jaali.png",
+        sizeOptions: ['3"', '4"', '5"', '6"', '8"', '10"', '12"'],
+        image: "/products/bathroom/drainer-jaali/vertical-jaali.webp",
       },
       {
         name: "Shower Drainer",
-        variants: [
-          { label: "12x4", image: "/products/bathroom/drainer-jaali/shower-drainer-12x4.webp" },
-          { label: "18x4", image: "/products/bathroom/drainer-jaali/shower-drainer-18x4.webp" },
-          { label: "24x4", image: "/products/bathroom/drainer-jaali/shower-drainer-24x4.webp" },
-        ],
+        sizeOptions: ['12x4', '18x4', '24x4'],
+        image: "/products/bathroom/drainer-jaali/shower-drainer.webp",
+
       },
       {
         name: "Tile Insert",
-        variants: [
-          { label: "12x4", image: "/products/bathroom/drainer-jaali/tile-insert-12x4.webp" },
-          { label: "18x4", image: "/products/bathroom/drainer-jaali/tile-insert-18x4.webp" },
-          { label: "24x4", image: "/products/bathroom/drainer-jaali/tile-insert-24x4.webp" },
-          { label: "5x5", image: "/products/bathroom/drainer-jaali/tile-insert-5x5.webp" },
-          { label: "6x6", image: "/products/bathroom/drainer-jaali/tile-insert-6x6.webp" },
-        ],
+        sizeOptions: ['12x4', '18x4', '24x4', '5x5', '6x6'],
+        image: "/products/bathroom/drainer-jaali/tile-insert.webp",
+
       },
     ],
   },
@@ -699,7 +698,7 @@ export const bathroomAccessories = {
   "jet-spray": {
     title: "JET SPRAY",
     description: "Precision jet sprays for every bathroom setup.",
-    image: "/products/bathroom/jet-spray/multi.webp",
+    image: "/products/bathroom/jet-spray/american.webp",
     items: [
       { name: "Multi", sizeOptions: ["1 mm", "1.5 mm"], image: "/products/bathroom/jet-spray/multi.webp" },
       { name: "Regular", sizeOptions: ["1 mm", "1.5 mm"], image: "/products/bathroom/jet-spray/regular.webp" },
@@ -710,7 +709,7 @@ export const bathroomAccessories = {
   "soap-dispenser": {
     title: "SOAP DISPENSER",
     description: "Elegant soap dispensers in a range of finishes.",
-    image: "/products/bathroom/soap-dispenser/capsule-white.webp",
+    image: "/products/bathroom/soap-dispenser/capsule.webp",
     items: [
       {
         name: "Capsule",
@@ -739,23 +738,28 @@ export const bathroomAccessories = {
     items: [
       {
         name: "Ultra Slim",
-        variants: sizedVariants("overhead-shower", "ultra-slim", [4, 6, 8, 10, 12]),
+        sizeOptions: ['4"', '6"', '8"', '10"', '12"'],
+        image: "/products/bathroom/overhead-shower/ultra-slim-8in.webp",
       },
       {
         name: "Curve Shower",
-        variants: sizedVariants("overhead-shower", "curve-shower", [4, 6, 8]),
+        sizeOptions: ['4"', '6"', '8"'],
+        image: "/products/bathroom/overhead-shower/curve-shower.webp",
       },
       {
         name: "Amaze",
-        variants: sizedVariants("overhead-shower", "amaze", [4, 6, 8]),
+        sizeOptions: ['4"', '6"', '8"'],
+        image: "/products/bathroom/overhead-shower/amaze-shower.webp",
       },
       {
         name: "Sandwich",
-        variants: sizedVariants("overhead-shower", "sandwich", [4, 6, 8]),
+        sizeOptions: ['4"', '6"', '8"'],
+        image: "/products/bathroom/overhead-shower/sandwich-shower.webp",
       },
       {
         name: "Shower Arm",
-        variants: sizedVariants("overhead-shower", "shower-arm", [9, 12, 15, 18, 24]),
+        sizeOptions: ['9"', '12"', '15"', '18"', '24"'],
+        image: "/products/bathroom/overhead-shower/shower-arm.webp",
       },
     ],
   },
@@ -763,7 +767,7 @@ export const bathroomAccessories = {
   "towel-ring-rack": {
     title: "TOWEL RING, RACK / ROD",
     description: "Towel rings, racks and rods in classic and modern shapes.",
-    image: "/products/bathroom/towel-ring-rack/ring-round.webp",
+    image: "/products/bathroom/towel-ring-rack/rack-rod-18in.webp",
     items: [
       {
         name: "Towel Ring",
@@ -786,14 +790,13 @@ export const bathroomAccessories = {
 
   "brass-taps": {
     title: "BRASS TAPS",
-    description: "Durable brass taps across our most popular varieties.",
-    image: "/products/bathroom/brass-taps/oria.webp",
+    description:
+      "Durable brass taps across our most popular varieties — available at Monfort, contact us to buy.",
+    image: "/products/brass-tap.webp",
+    // No product images — names only, with a contact-to-buy note
+    textOnly: true,
     items: ["Oria", "Glassy", "Arya", "Star", "Opel", "ECO", "Fusion", "Polo"].map(
-      (variety) => ({
-        name: variety,
-        simple: true,
-        image: `/products/bathroom/brass-taps/${variety.toLowerCase()}.webp`,
-      }),
+      (variety) => ({ name: variety }),
     ),
   },
 
@@ -810,7 +813,7 @@ export const bathroomAccessories = {
         name: "Shelf",
         variants: [
           { label: '12"', image: "/products/bathroom/acrylic-accessories/shelf-12in.webp" },
-          { label: '18"', image: "/products/bathroom/acrylic-accessories/shelf-18in.webp" },
+          { label: '18"', image: "/products/bathroom/acrylic-accessories/shelf-18ins.webp" },
           { label: '24"', image: "/products/bathroom/acrylic-accessories/shelf-24in.webp" },
         ],
       },
@@ -822,4 +825,54 @@ export const bathroomAccessories = {
 export const ptmtTapsMenuEntry = {
   name: "PTMT Taps",
   href: "/products/ptmt-taps",
+};
+
+// Premium Montfort Accessories — one page per series.
+// Images go in /public/products/premium/<code>.webp (e.g. br-1401.webp)
+const premiumItem = (code, name) => ({
+  name: `${name} (${code})`,
+  simple: true,
+  image: `/products/premium/${code.toLowerCase()}.webp`,
+});
+
+export const premiumAccessories = {
+  brayston: {
+    title: "BRAYSTON SERIES",
+    description:
+      "Square-edged stainless steel bathroom accessories with a sleek, modern chrome finish.",
+    image: "/products/premium/br-1407.webp",
+    items: [
+      premiumItem("BR-1401", "Towel Rod"),
+      premiumItem("BR-1402", "Towel Ring"),
+      premiumItem("BR-1403", "Soap Dish"),
+      premiumItem("BR-1404", "Tumbler Holder"),
+      premiumItem("BR-1405", "Coat Hook"),
+      premiumItem("BR-1407", "Towel Rack"),
+      premiumItem("BR-1408", "Double Soap Dish"),
+      premiumItem("BR-1409", "Soap Dish with Tumbler"),
+      premiumItem("BR-1410", "Paper Holder with Flap"),
+      premiumItem("BR-1411", "Liquid Soap Dispenser"),
+    ],
+  },
+
+  technova: {
+    title: "TECHNOVA SERIES",
+    description:
+      "Round-profile stainless steel bathroom accessories with a polished, timeless chrome finish.",
+    image: "/products/premium/te-2211.webp",
+    items: [
+      premiumItem("TE-2201", "Towel Rod"),
+      premiumItem("TE-2202", "Towel Ring"),
+      premiumItem("TE-2203", "Soap Dish"),
+      premiumItem("TE-2204", "Tumbler Holder"),
+      premiumItem("TE-2205", "Coat Hook"),
+      premiumItem("TE-2207", "Towel Rack"),
+      premiumItem("TE-2208", "Double Soap Dish"),
+      premiumItem("TE-2209", "Soap Dish with Tumbler"),
+      premiumItem("TE-2210", "Paper Holder with Flap"),
+      premiumItem("TE-2211", "Liquid Soap Dispenser"),
+      premiumItem("TE-2218", "Double Soap Dish"),
+      premiumItem("TE-2219", "Soap Dish with Tumbler"),
+    ],
+  },
 };

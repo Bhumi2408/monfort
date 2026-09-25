@@ -120,13 +120,13 @@ export default function Contact() {
               MAIN CONTENT
           ====================================================== */}
 
-          <div className="mt-12 grid gap-8 lg:mt-16 lg:grid-cols-[0.82fr_1.18fr] lg:gap-10">
+          <div className="mt-10 grid gap-6 sm:mt-12 sm:gap-8 lg:mt-16 lg:grid-cols-[0.82fr_1.18fr] lg:gap-10">
             {/* =================================================
                 LEFT — PREMIUM CONTACT PANEL
             ================================================== */}
 
-            <Reveal direction="left">
-              <div className="relative h-full overflow-hidden rounded-[32px] border border-[#DDE9E5] bg-white p-6 shadow-[0_20px_70px_rgba(15,40,35,0.06)] sm:p-8 lg:p-10">
+            <Reveal direction="left" className="min-w-0">
+              <div className="relative h-full overflow-hidden rounded-3xl border border-[#DDE9E5] bg-white p-5 shadow-[0_20px_70px_rgba(15,40,35,0.06)] sm:rounded-[32px] sm:p-8 lg:p-10">
                 {/* Decorative circle */}
 
                 <div className="pointer-events-none absolute -right-24 -top-24 h-64 w-64 rounded-full border-[30px] border-[#34acb1]/5" />
@@ -175,7 +175,7 @@ export default function Contact() {
 
                     <a
                       href="tel:+919871667213"
-                      className="group flex items-center gap-4 rounded-2xl border border-[#E5EEEB] bg-[#F8FBFA] p-4 transition-all duration-300 hover:-translate-y-1 hover:border-[#34acb1]/30 hover:bg-white hover:shadow-[0_12px_30px_rgba(52,172,177,0.10)]"
+                      className="group flex items-center gap-3 rounded-2xl border border-[#E5EEEB] bg-[#F8FBFA] p-3.5 sm:gap-4 sm:p-4 transition-all duration-300 hover:-translate-y-1 hover:border-[#34acb1]/30 hover:bg-white hover:shadow-[0_12px_30px_rgba(52,172,177,0.10)]"
                     >
                       <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-[#E7F6F5] text-[#258F94] transition-all duration-300 group-hover:bg-[#34acb1] group-hover:text-white">
                         <Phone size={18} />
@@ -186,14 +186,14 @@ export default function Contact() {
                           Call Us
                         </p>
 
-                        <p className="mt-1 text-sm font-semibold text-[#18201F]">
+                        <p className="mt-1 text-sm font-semibold break-words text-[#18201F]">
                           +91-9871667213
                         </p>
                       </div>
 
                       <ArrowRight
                         size={16}
-                        className="ml-auto text-[#B8C3BF] transition-all duration-300 group-hover:translate-x-1 group-hover:text-[#34acb1]"
+                        className="ml-auto shrink-0 text-[#B8C3BF] transition-all duration-300 group-hover:translate-x-1 group-hover:text-[#34acb1]"
                       />
                     </a>
 
@@ -201,7 +201,7 @@ export default function Contact() {
 
                     <a
                       href="tel:+918383972282"
-                      className="group flex items-center gap-4 rounded-2xl border border-[#E5EEEB] bg-[#F8FBFA] p-4 transition-all duration-300 hover:-translate-y-1 hover:border-[#34acb1]/30 hover:bg-white hover:shadow-[0_12px_30px_rgba(52,172,177,0.10)]"
+                      className="group flex items-center gap-3 rounded-2xl border border-[#E5EEEB] bg-[#F8FBFA] p-3.5 sm:gap-4 sm:p-4 transition-all duration-300 hover:-translate-y-1 hover:border-[#34acb1]/30 hover:bg-white hover:shadow-[0_12px_30px_rgba(52,172,177,0.10)]"
                     >
                       <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-[#E7F6F5] text-[#258F94] transition-all duration-300 group-hover:bg-[#34acb1] group-hover:text-white">
                         <Phone size={18} />
@@ -212,14 +212,14 @@ export default function Contact() {
                           Office No.
                         </p>
 
-                        <p className="mt-1 text-sm font-semibold text-[#18201F]">
+                        <p className="mt-1 text-sm font-semibold break-words text-[#18201F]">
                           +91-8383972282
                         </p>
                       </div>
 
                       <ArrowRight
                         size={16}
-                        className="ml-auto text-[#B8C3BF] transition-all duration-300 group-hover:translate-x-1 group-hover:text-[#34acb1]"
+                        className="ml-auto shrink-0 text-[#B8C3BF] transition-all duration-300 group-hover:translate-x-1 group-hover:text-[#34acb1]"
                       />
                     </a>
 
@@ -227,7 +227,7 @@ export default function Contact() {
 
                     <a
                       href="mailto:harshkansal280@gmail.com"
-                      className="group flex items-center gap-4 rounded-2xl border border-[#E5EEEB] bg-[#F8FBFA] p-4 transition-all duration-300 hover:-translate-y-1 hover:border-[#34acb1]/30 hover:bg-white hover:shadow-[0_12px_30px_rgba(52,172,177,0.10)]"
+                      className="group flex items-center gap-3 rounded-2xl border border-[#E5EEEB] bg-[#F8FBFA] p-3.5 sm:gap-4 sm:p-4 transition-all duration-300 hover:-translate-y-1 hover:border-[#34acb1]/30 hover:bg-white hover:shadow-[0_12px_30px_rgba(52,172,177,0.10)]"
                     >
                       <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-[#E7F6F5] text-[#258F94] transition-all duration-300 group-hover:bg-[#34acb1] group-hover:text-white">
                         <Mail size={18} />
@@ -251,7 +251,7 @@ export default function Contact() {
 
                     {/* Location */}
 
-                    <div className="group flex items-center gap-4 rounded-2xl border border-[#E5EEEB] bg-[#F8FBFA] p-4 transition-all duration-300 hover:border-[#34acb1]/30 hover:bg-white hover:shadow-[0_12px_30px_rgba(52,172,177,0.10)]">
+                    <div className="group flex items-center gap-3 rounded-2xl border border-[#E5EEEB] bg-[#F8FBFA] p-3.5 sm:gap-4 sm:p-4 transition-all duration-300 hover:border-[#34acb1]/30 hover:bg-white hover:shadow-[0_12px_30px_rgba(52,172,177,0.10)]">
                       <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-[#E7F6F5] text-[#258F94] transition-all duration-300 group-hover:bg-[#34acb1] group-hover:text-white">
                         <MapPin size={18} />
                       </div>
@@ -273,7 +273,7 @@ export default function Contact() {
                       BUSINESS HOURS
                   ================================================== */}
 
-                  <div className="mt-5 flex items-center gap-4 rounded-2xl bg-[#10201E] p-5">
+                  <div className="mt-5 flex items-center gap-3 rounded-2xl bg-[#10201E] p-4 sm:gap-4 sm:p-5">
                     <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-[#34acb1]/15 text-[#34acb1]">
                       <Clock3 size={19} />
                     </div>
@@ -298,8 +298,8 @@ export default function Contact() {
                 RIGHT — CONTACT FORM
             ================================================== */}
 
-            <Reveal direction="right">
-              <div className="relative h-full rounded-[32px] border border-[#DDE9E5] bg-white p-6 shadow-[0_20px_70px_rgba(15,40,35,0.07)] sm:p-8 lg:p-10">
+            <Reveal direction="right" className="min-w-0">
+              <div className="relative h-full rounded-3xl border border-[#DDE9E5] bg-white p-5 shadow-[0_20px_70px_rgba(15,40,35,0.07)] sm:rounded-[32px] sm:p-8 lg:p-10">
                 {/* Top accent */}
 
                 <div className="absolute left-8 right-8 top-0 h-[3px] rounded-b-full bg-[#34acb1] sm:left-10 sm:right-10" />
@@ -350,7 +350,7 @@ export default function Contact() {
                         value={formData.name}
                         onChange={handleChange}
                         required
-                        className="w-full rounded-xl border border-[#E0E9E6] bg-[#F8FBFA] px-4 py-3.5 text-sm text-[#17201E] outline-none transition-all placeholder:text-[#AAB4B0] focus:border-[#34acb1] focus:bg-white focus:ring-4 focus:ring-[#34acb1]/10"
+                        className="w-full rounded-xl border border-[#E0E9E6] bg-[#F8FBFA] px-4 py-3.5 text-base sm:text-sm text-[#17201E] outline-none transition-all placeholder:text-[#AAB4B0] focus:border-[#34acb1] focus:bg-white focus:ring-4 focus:ring-[#34acb1]/10"
                       />
                     </div>
 
@@ -370,7 +370,7 @@ export default function Contact() {
                         value={formData.phone}
                         onChange={handleChange}
                         required
-                        className="w-full rounded-xl border border-[#E0E9E6] bg-[#F8FBFA] px-4 py-3.5 text-sm text-[#17201E] outline-none transition-all placeholder:text-[#AAB4B0] focus:border-[#34acb1] focus:bg-white focus:ring-4 focus:ring-[#34acb1]/10"
+                        className="w-full rounded-xl border border-[#E0E9E6] bg-[#F8FBFA] px-4 py-3.5 text-base sm:text-sm text-[#17201E] outline-none transition-all placeholder:text-[#AAB4B0] focus:border-[#34acb1] focus:bg-white focus:ring-4 focus:ring-[#34acb1]/10"
                       />
                     </div>
                   </div>
@@ -394,7 +394,7 @@ export default function Contact() {
                         value={formData.email}
                         onChange={handleChange}
                         required
-                        className="w-full rounded-xl border border-[#E0E9E6] bg-[#F8FBFA] px-4 py-3.5 text-sm text-[#17201E] outline-none transition-all placeholder:text-[#AAB4B0] focus:border-[#34acb1] focus:bg-white focus:ring-4 focus:ring-[#34acb1]/10"
+                        className="w-full rounded-xl border border-[#E0E9E6] bg-[#F8FBFA] px-4 py-3.5 text-base sm:text-sm text-[#17201E] outline-none transition-all placeholder:text-[#AAB4B0] focus:border-[#34acb1] focus:bg-white focus:ring-4 focus:ring-[#34acb1]/10"
                       />
                     </div>
 
@@ -412,7 +412,7 @@ export default function Contact() {
                         value={formData.subject}
                         onChange={handleChange}
                         required
-                        className="w-full appearance-none rounded-xl border border-[#E0E9E6] bg-[#F8FBFA] px-4 py-3.5 text-sm text-[#17201E] outline-none transition-all focus:border-[#34acb1] focus:bg-white focus:ring-4 focus:ring-[#34acb1]/10"
+                        className="w-full appearance-none rounded-xl border border-[#E0E9E6] bg-[#F8FBFA] px-4 py-3.5 text-base sm:text-sm text-[#17201E] outline-none transition-all focus:border-[#34acb1] focus:bg-white focus:ring-4 focus:ring-[#34acb1]/10"
                       >
                         <option value="">
                           Select enquiry type
@@ -449,12 +449,12 @@ export default function Contact() {
                     <textarea
                       id="message"
                       name="message"
-                      rows={6}
+                      rows={5}
                       placeholder="Tell us about your requirements..."
                       value={formData.message}
                       onChange={handleChange}
                       required
-                      className="w-full resize-none rounded-xl border border-[#E0E9E6] bg-[#F8FBFA] px-4 py-3.5 text-sm leading-6 text-[#17201E] outline-none transition-all placeholder:text-[#AAB4B0] focus:border-[#34acb1] focus:bg-white focus:ring-4 focus:ring-[#34acb1]/10"
+                      className="w-full resize-none rounded-xl border border-[#E0E9E6] bg-[#F8FBFA] px-4 py-3.5 text-base sm:text-sm leading-6 text-[#17201E] outline-none transition-all placeholder:text-[#AAB4B0] focus:border-[#34acb1] focus:bg-white focus:ring-4 focus:ring-[#34acb1]/10"
                     />
                   </div>
 
@@ -475,7 +475,7 @@ export default function Contact() {
                     <button
                       type="submit"
                       disabled={status === "sending"}
-                      className="group inline-flex items-center justify-center gap-3 rounded-full bg-[#10201E] px-7 py-4 text-sm font-semibold text-white shadow-lg transition-all duration-300 hover:-translate-y-1 hover:bg-[#34acb1] hover:shadow-[0_12px_30px_rgba(52,172,177,0.25)] disabled:cursor-not-allowed disabled:opacity-60 disabled:hover:translate-y-0"
+                      className="group inline-flex w-full items-center justify-center gap-3 rounded-full bg-[#10201E] px-7 py-4 sm:w-auto text-sm font-semibold text-white shadow-lg transition-all duration-300 hover:-translate-y-1 hover:bg-[#34acb1] hover:shadow-[0_12px_30px_rgba(52,172,177,0.25)] disabled:cursor-not-allowed disabled:opacity-60 disabled:hover:translate-y-0"
                     >
                       {status === "sending"
                         ? "Sending..."
@@ -512,10 +512,10 @@ export default function Contact() {
           ====================================================== */}
 
           <Reveal className="mt-8 lg:mt-10">
-            <div className="grid gap-4 sm:grid-cols-3">
+            <div className="grid gap-3 sm:grid-cols-2 sm:gap-4 lg:grid-cols-3">
               <Link
                 href="/#products"
-                className="group flex items-center gap-4 rounded-2xl border border-[#E1EBE8] bg-white p-5 shadow-[0_8px_30px_rgba(15,40,35,0.04)] transition-all duration-300 hover:-translate-y-1 hover:border-[#34acb1]/30 hover:shadow-[0_15px_35px_rgba(15,40,35,0.08)]"
+                className="group flex items-center gap-4 rounded-2xl border border-[#E1EBE8] bg-white p-4 sm:p-5 shadow-[0_8px_30px_rgba(15,40,35,0.04)] transition-all duration-300 hover:-translate-y-1 hover:border-[#34acb1]/30 hover:shadow-[0_15px_35px_rgba(15,40,35,0.08)]"
               >
                 <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-[#EAF7F6] text-[#258F94] transition-all group-hover:bg-[#34acb1] group-hover:text-white">
                   <ArrowRight size={18} />
@@ -533,13 +533,13 @@ export default function Contact() {
 
                 <ArrowRight
                   size={16}
-                  className="text-[#C2CCC8] transition-all group-hover:translate-x-1 group-hover:text-[#34acb1]"
+                  className="shrink-0 text-[#C2CCC8] transition-all group-hover:translate-x-1 group-hover:text-[#34acb1]"
                 />
               </Link>
 
               <Link
                 href="/#faq"
-                className="group flex items-center gap-4 rounded-2xl border border-[#E1EBE8] bg-white p-5 shadow-[0_8px_30px_rgba(15,40,35,0.04)] transition-all duration-300 hover:-translate-y-1 hover:border-[#34acb1]/30 hover:shadow-[0_15px_35px_rgba(15,40,35,0.08)]"
+                className="group flex items-center gap-4 rounded-2xl border border-[#E1EBE8] bg-white p-4 sm:p-5 shadow-[0_8px_30px_rgba(15,40,35,0.04)] transition-all duration-300 hover:-translate-y-1 hover:border-[#34acb1]/30 hover:shadow-[0_15px_35px_rgba(15,40,35,0.08)]"
               >
                 <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-[#EAF7F6] text-[#258F94] transition-all group-hover:bg-[#34acb1] group-hover:text-white">
                   <MessageCircle size={18} />
@@ -557,7 +557,7 @@ export default function Contact() {
 
                 <ArrowRight
                   size={16}
-                  className="text-[#C2CCC8] transition-all group-hover:translate-x-1 group-hover:text-[#34acb1]"
+                  className="shrink-0 text-[#C2CCC8] transition-all group-hover:translate-x-1 group-hover:text-[#34acb1]"
                 />
               </Link>
 
@@ -565,7 +565,7 @@ export default function Contact() {
                 href="https://wa.me/919871667213"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group flex items-center gap-4 rounded-2xl border border-[#E1EBE8] bg-white p-5 shadow-[0_8px_30px_rgba(15,40,35,0.04)] transition-all duration-300 hover:-translate-y-1 hover:border-[#34acb1]/30 hover:shadow-[0_15px_35px_rgba(15,40,35,0.08)]"
+                className="group flex items-center gap-4 rounded-2xl border border-[#E1EBE8] bg-white p-4 sm:p-5 shadow-[0_8px_30px_rgba(15,40,35,0.04)] transition-all duration-300 hover:-translate-y-1 hover:border-[#34acb1]/30 hover:shadow-[0_15px_35px_rgba(15,40,35,0.08)]"
               >
                 <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-[#EAF7F6] text-[#258F94] transition-all group-hover:bg-[#34acb1] group-hover:text-white">
                   <MessageCircle size={18} />
@@ -583,7 +583,7 @@ export default function Contact() {
 
                 <ArrowRight
                   size={16}
-                  className="text-[#C2CCC8] transition-all group-hover:translate-x-1 group-hover:text-[#34acb1]"
+                  className="shrink-0 text-[#C2CCC8] transition-all group-hover:translate-x-1 group-hover:text-[#34acb1]"
                 />
               </a>
             </div>

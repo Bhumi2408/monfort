@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowLeft, ArrowUpRight, MessageCircle, Sparkles } from "lucide-react";
+import { ArrowLeft, ArrowUpRight, MessageCircle, Phone, Sparkles } from "lucide-react";
 
 const FALLBACK_IMAGE = "/products/handmade-sink.webp";
 
@@ -13,6 +13,9 @@ export default function AccessoryCategoryPage({
   image,
   items,
   backHref = "/products/bathroom-accessories",
+  backLabel = "Back to Bathroom Accessories",
+  badge = "Bathroom Accessories",
+  textOnly = false,
 }) {
   return (
     <section className="relative overflow-hidden bg-[#f7f9f9]">
@@ -30,7 +33,7 @@ export default function AccessoryCategoryPage({
             <span className="flex h-8 w-8 items-center justify-center rounded-full border border-white/15 bg-white/[0.06] backdrop-blur-sm transition-all duration-300 group-hover:-translate-x-1 group-hover:border-white/30">
               <ArrowLeft className="h-4 w-4" />
             </span>
-            Back to Bathroom Accessories
+            {backLabel}
           </Link>
 
           <div className="mx-auto mt-10 max-w-2xl text-center">
@@ -40,7 +43,7 @@ export default function AccessoryCategoryPage({
                 <span className="relative h-2 w-2 rounded-full bg-[#67cdd0]" />
               </span>
               <span className="text-[11px] font-bold uppercase tracking-[0.22em] text-[#67cdd0]">
-                Bathroom Accessories
+                {badge}
               </span>
             </div>
 
@@ -59,11 +62,15 @@ export default function AccessoryCategoryPage({
 
       {/* ================= ITEMS ================= */}
       <div className="relative mx-auto max-w-7xl px-5 pt-16 sm:px-6 lg:px-8 lg:pt-20">
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 lg:gap-7">
-          {items.map((item, index) => (
-            <AccessoryCard key={item.name + index} item={item} fallbackImage={image} />
-          ))}
-        </div>
+        {textOnly ? (
+          <TextOnlyItems title={title} items={items} />
+        ) : (
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 lg:gap-7">
+            {items.map((item, index) => (
+              <AccessoryCard key={item.name + index} item={item} fallbackImage={image} />
+            ))}
+          </div>
+        )}
 
         {/* ================= CTA ================= */}
         <div className="relative mt-16 overflow-hidden rounded-[32px] bg-gradient-to-br from-[#142A3D] via-[#1a3a4f] to-[#0f2431] px-6 py-12 text-center shadow-[0_25px_60px_rgba(19,54,58,0.25)] sm:px-10 sm:py-14 lg:mt-20">
@@ -104,6 +111,61 @@ export default function AccessoryCategoryPage({
 
       <div className="h-16 lg:h-24" />
     </section>
+  );
+}
+
+/**
+ * Names-only listing (no product images) with a contact-to-buy note.
+ */
+function TextOnlyItems({ title, items }) {
+  return (
+    <div className="overflow-hidden rounded-[28px] border border-gray-200/70 bg-white shadow-[0_8px_30px_rgba(19,54,58,0.06)]">
+      <div className="flex flex-col gap-4 border-b border-gray-100 px-6 py-6 sm:flex-row sm:items-center sm:justify-between sm:px-8">
+        <div>
+          <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-[#258F94]">
+            Available Categories
+          </p>
+          <h2 className="mt-1 text-xl font-bold text-[#142A3D] sm:text-2xl">
+            {items.length} varieties of {title.toLowerCase()}
+          </h2>
+        </div>
+
+        <span className="inline-flex items-center gap-2 self-start rounded-full bg-[#258F94]/10 px-4 py-2 text-xs font-bold text-[#258F94] sm:self-auto">
+          <span className="h-2 w-2 rounded-full bg-[#258F94]" />
+          Available at Monfort
+        </span>
+      </div>
+
+      <div className="grid grid-cols-2 gap-3 p-6 sm:grid-cols-3 sm:p-8 lg:grid-cols-4">
+        {items.map((item, index) => (
+          <div
+            key={item.name}
+            className="group relative flex items-center gap-3 overflow-hidden rounded-2xl border border-gray-100 bg-[#f7f9f9] px-4 py-4 transition-all duration-300 hover:-translate-y-1 hover:border-[#30ADB2]/40 hover:bg-white hover:shadow-[0_12px_28px_rgba(37,143,148,0.12)]"
+          >
+            <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-[#142A3D] to-[#1f4256] text-[11px] font-bold text-[#67cdd0]">
+              {String(index + 1).padStart(2, "0")}
+            </span>
+            <span className="text-sm font-bold text-[#142A3D] sm:text-base">
+              {item.name}
+            </span>
+          </div>
+        ))}
+      </div>
+
+      <div className="flex flex-col items-center justify-between gap-4 bg-gradient-to-r from-[#142A3D] to-[#1d4a5c] px-6 py-5 text-center sm:flex-row sm:px-8 sm:text-left">
+        <p className="text-sm font-semibold text-white">
+          Available in Monfort —{" "}
+          <span className="text-[#67cdd0]">contact us to buy.</span>
+        </p>
+        <Link
+          href="/contact"
+          className="inline-flex items-center gap-2 rounded-full bg-[#258F94] px-6 py-2.5 text-sm font-bold text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#30ADB2]"
+        >
+          <Phone className="h-4 w-4" />
+          Contact Us
+        </Link>
+      </div>
+    </div>
   );
 }
 

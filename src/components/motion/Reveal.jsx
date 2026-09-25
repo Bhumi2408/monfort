@@ -2,6 +2,12 @@
 
 import { motion } from "framer-motion";
 
+// Trigger as soon as the top of an element is a little inside the viewport.
+// A fractional `amount` (e.g. 0.2) can never be reached by elements taller
+// than ~5x the screen — like a long product grid on mobile — so they'd stay
+// invisible forever.
+const VIEWPORT_MARGIN = "0px 0px -60px 0px";
+
 const directions = {
   up: { y: 36, x: 0 },
   down: { y: -36, x: 0 },
@@ -17,7 +23,7 @@ export function Reveal({
   duration = 0.7,
   className = "",
   once = true,
-  amount = 0.2,
+  amount = "some",
   as: Tag = "div",
 }) {
   const offset = directions[direction] ?? directions.up;
@@ -27,7 +33,7 @@ export function Reveal({
     <MotionTag
       initial={{ opacity: 0, ...offset }}
       whileInView={{ opacity: 1, y: 0, x: 0 }}
-      viewport={{ once, amount }}
+      viewport={{ once, amount, margin: VIEWPORT_MARGIN }}
       transition={{ duration, delay, ease: [0.22, 1, 0.36, 1] }}
       className={className}
     >
@@ -42,13 +48,13 @@ export function StaggerGroup({
   stagger = 0.12,
   delay = 0,
   once = true,
-  amount = 0.2,
+  amount = "some",
 }) {
   return (
     <motion.div
       initial="hidden"
       whileInView="show"
-      viewport={{ once, amount }}
+      viewport={{ once, amount, margin: VIEWPORT_MARGIN }}
       variants={{
         hidden: {},
         show: {

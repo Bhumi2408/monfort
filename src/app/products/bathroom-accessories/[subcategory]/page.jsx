@@ -22,6 +22,7 @@ export default async function BathroomAccessorySubcategoryPage({ params }) {
       description={selected.description}
       image={selected.image}
       items={selected.items}
+      textOnly={selected.textOnly}
     />
   );
 }

@@ -1,4 +1,5 @@
 import { Users, Store, Globe, Award, ArrowUpRight } from "lucide-react";
+import CountUp from "@/components/motion/CountUp";
 
 const stats = [
   {
@@ -90,7 +91,7 @@ export default function StatsSection() {
 
                 {/* Number */}
                 <h3 className="relative text-3xl font-bold tracking-tight text-white sm:text-4xl">
-                  {item.number}
+                  <CountUp value={item.number} className="tabular-nums" />
                 </h3>
 
                 {/* Title */}
