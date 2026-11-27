@@ -3,6 +3,7 @@ import "./globals.css";
 import Header from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import WhatsAppFloatButton from "@/components/WhatsAppFloatButton";
+import EnquiryPopup from "@/components/EnquiryPopup";
 import { SITE_URL } from "@/lib/seo";
 
 const poppins = Poppins({
@@ -36,6 +37,7 @@ export default function RootLayout({ children }) {
         {children}
         <Footer />
         <WhatsAppFloatButton />
+        <EnquiryPopup />
       </body>
     </html>
   );

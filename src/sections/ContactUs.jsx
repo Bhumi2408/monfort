@@ -16,6 +16,7 @@ import {
 import Link from "next/link";
 import { useState } from "react";
 import { Reveal } from "@/components/motion/Reveal";
+import { submitEnquiry } from "@/lib/web3forms";
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -40,20 +41,12 @@ export default function Contact() {
     setStatus("sending");
 
     try {
-      const response = await fetch("https://api.web3forms.com/submit", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          access_key: "a2be3110-9cf8-494a-ba32-8f3a28caa0f4",
-          ...formData,
-        }),
+      const success = await submitEnquiry({
+        ...formData,
+        from_name: "Monfort Website - Contact Page",
       });
 
-      const result = await response.json();
-
-      if (result.success) {
+      if (success) {
         setStatus("success");
         setFormData({
           name: "",
